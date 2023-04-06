@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Collecte des données</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'table/css/style.css' %}">
+
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+<body>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Collecte des données</h2>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="POST"> {% csrf_token %}
+                        <div class="form-row">
+                            <div class="name">Localité</div>
+                            <div class="value">
+                                <input type="text" class="form-control" aria-describedby="localitée" placeholder="localitée" name="localité" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name">Type de biomasse</div>
+                            <div class="value">
+                                <input type="text" class="form-control" id="biomasse" aria-describedby="biomasse" placeholder="biomasse" name="type" required>
+                            </div>
+                        </div>  
+                    
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Enregistrer</button>
+                </div>
+            </form>
+            </div>
+            <div class="card-footer text-muted text-danger bg-light ">
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+               </div>
+        </div>
+    </div>
+
+    {% include "table.html" %}
+
+    <!-- Jquery JS-->
+    <script src="{ % static 'vendor/jquery/jquery.min.js' %}"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+</body>
+</html>

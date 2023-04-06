@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+	</head>
+	<body>
+    <div class="page2">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Les données</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Localité</th>
+                                <th scope="col">Localisation</th>
+                                <th scope="col">Type de biomasse</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                            {% for bio in b %}
+						    <tr class="alert" role="alert">
+						      <th scope="row"></th>
+                              <td>{{ bio.Localité }}</td>
+                              <td>{{ bio.Localisation }}</td>
+                              <td>{{ bio.Type }}</td>
+						    </tr>
+                            {% endfor %}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+	
+
+	</body>
+</html>
+

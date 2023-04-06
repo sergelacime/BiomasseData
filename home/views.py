@@ -33,9 +33,9 @@ def home(request):
             b.save()
             
             messages.warning(request,'Enrégistrer') 
-            return render(request, "index.html", {"b":bio})
+            return render(request, "home.html", {"b":bio})
         else :
-            return render(request, "index.html",{"b":bio})
+            return render(request, "home.html",{"b":bio})
     except:
         messages.warning(request,'Adresse Introuvable') 
-        return render(request, "index.html", {"b":bio})
+        return render(request, "home.html", {"b":bio})
